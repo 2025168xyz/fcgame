@@ -12,10 +12,10 @@
     <meta name="x5-orientation" content="landscape">
     <meta name="x5-fullscreen" content="true">
     <meta name="x5-page-mode" content="app">
-    <title>FCGame在线玩 | 麋鹿不见了</title>
+    <title>XYZ游戏厅</title>
     <meta name="keywords" content="FC游戏在线玩，FC在线模拟器，NES在线模拟器，魂斗罗，超级玛丽，忍者龙剑传" />
-    <meta name="description" content="可在手机电脑上在线玩FC游戏的网站，近乎完美的还原任天堂FC/NES原版ROM游戏的视频和声音。" />
-    <link href="jsnes.css" tppabs="http://fc.liflag.cn/css/jsnes.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="任天堂FC/NES原版ROM在线玩，可以近乎完美的还原fc卡带游戏的视频和声音。" />
+    <link href="/jsnes.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -54,119 +54,203 @@
         </div>
     </div>
 </body>
-<script src="jquery-1.4.2.min.js" tppabs="http://fc.liflag.cn/lib/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="dynamicaudio-min.js" tppabs="http://fc.liflag.cn/lib/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
-<script src="nes.js" tppabs="http://fc.liflag.cn/source/nes.js" type="text/javascript" charset="utf-8"></script>
-<script src="utils.js" tppabs="http://fc.liflag.cn/source/utils.js" type="text/javascript" charset="utf-8"></script>
-<script src="cpu.js" tppabs="http://fc.liflag.cn/source/cpu.js" type="text/javascript" charset="utf-8"></script>
-<script src="keyboard.js" tppabs="http://fc.liflag.cn/source/keyboard.js" type="text/javascript" charset="utf-8"></script>
-<script src="mappers.js" tppabs="http://fc.liflag.cn/source/mappers.js" type="text/javascript" charset="utf-8"></script>
-<script src="papu.js" tppabs="http://fc.liflag.cn/source/papu.js" type="text/javascript" charset="utf-8"></script>
-<script src="ppu.js" tppabs="http://fc.liflag.cn/source/ppu.js" type="text/javascript" charset="utf-8"></script>
-<script src="rom.js" tppabs="http://fc.liflag.cn/source/rom.js" type="text/javascript" charset="utf-8"></script>
-<script src="ui.js" tppabs="http://fc.liflag.cn/source/ui.js" type="text/javascript" charset="utf-8"></script>
-<script src="debug.js" tppabs="http://fc.liflag.cn/lib/debug.js" type="text/javascript" charset="utf-8"></script>
+<script src="/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/dynamicaudio-min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/nes.js" type="text/javascript" charset="utf-8"></script>
+<script src="/utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="/cpu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/keyboard.js" type="text/javascript" charset="utf-8"></script>
+<script src="/mappers.js" type="text/javascript" charset="utf-8"></script>
+<script src="/papu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/ppu.js" type="text/javascript" charset="utf-8"></script>
+<script src="/rom.js" type="text/javascript" charset="utf-8"></script>
+<script src="/ui.js" type="text/javascript" charset="utf-8"></script>
+<script src="/debug.mini.js" type="text/javascript" charset="utf-8"></script>
+<script src="/nipplejs.min.js" type="text/javascript"></script>
+<script src="/joystick.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
 <script type="text/javascript" charset="utf-8">
     var nes;
     $(function() {
         nes = new JSNES({
             'ui': $('#emulator').JSNESUI({
-                "经典": [
-                    ['纽约大拳猫', 'RockinCats.nes'/*tpa=http://fc.liflag.cn/roms/rom2/RockinCats.nes*/],
-                    ['赤影战士 Kage', 'Kage.nes'/*tpa=http://fc.liflag.cn/roms/other/Kage.nes*/],
-                    ['中国象棋', 'Zhong Guo Xiang Qi.nes'/*tpa=http://fc.liflag.cn/roms/other/Zhong Guo Xiang Qi.nes*/],
-                    ['吃豆精灵 (J) (V1.1) Pac-Man [!]', 'http://fc.liflag.cn/roms/other/Pac-Man.nes'],
-                    ['沙罗曼蛇 (U) Life Force', 'Life Force [!].nes'/*tpa=http://fc.liflag.cn/roms/rom2/Life Force [!].nes*/],
-                    ['1943 (U) 1943 - The Battle of Midway', '1943.nes'/*tpa=http://fc.liflag.cn/roms/rom2/1943.nes*/],
-                    ['脱狱 Cross Fire (J)', 'Cross Fire (J).nes'/*tpa=http://fc.liflag.cn/roms/rom2/Cross Fire (J).nes*/],
-                    ['撞球咖啡馆 Shufflepuck Cafe', 'Shufflepuck Cafe.nes'/*tpa=http://fc.liflag.cn/roms/rom2/Shufflepuck Cafe.nes*/],
-                    ['功夫 (J) (V1.2) Yie Ar Kung-Fu [!]', '(J) (V1.2) Yie Ar Kung-Fu [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) (V1.2) Yie Ar Kung-Fu [!].nes*/],
-                ],
-                "魂斗罗": [
-                    ['魂斗罗1(U)30', 'Contra1(U)30.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)30.nes*/],
-                    ['魂斗罗1(U)30F', 'Contra1(U)30F.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)30F.nes*/],
-                    ['魂斗罗1(U)30L', 'Contra1(U)30L.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)30L.nes*/],
-                    ['魂斗罗1(U)30M', 'Contra1(U)30M.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)30M.nes*/],
-                    ['魂斗罗1(U)30S', 'Contra1(U)30S.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)30S.nes*/],
-                    ['魂斗罗1(U)F', 'Contra1(U)F.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)F.nes*/],
-                    ['魂斗罗1(U)L', 'Contra1(U)L.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)L.nes*/],
-                    ['魂斗罗1(U)M', 'Contra1(U)M.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)M.nes*/],
-                    ['魂斗罗1(U)S', 'Contra1(U)S.nes'/*tpa=http://fc.liflag.cn/roms/Contra/Contra1(U)S.nes*/],
-                ],
-                "坦克": [
-                    ['坦克 (Ch) Missile Tank', '(Ch) Missile Tank.nes'/*tpa=http://fc.liflag.cn/roms/rom1/(Ch) Missile Tank.nes*/],
-                    ['坦克 (Ch) Tank 1990', '(Ch) Tank 1990.nes'/*tpa=http://fc.liflag.cn/roms/rom1/(Ch) Tank 1990.nes*/],
-                    ['坦克 (J) Battle City', '(J) Battle City.nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Battle City.nes*/],
-                ],
-                "超级玛丽": [
-                    ['超级马里奥1 (W) Super Mario Bros. [!]', '(W) Super Mario Bros. [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(W) Super Mario Bros. [!].nes*/],
-                    ['超级马里奥2 (W) Super Mario Bros. 3 (U)', 'Super Mario Bros. 3 (U) (PRG1) [!].nes'/*tpa=http://fc.liflag.cn/roms/bfirsh/Super Mario Bros. 3 (U) (PRG1) [!].nes*/],
-                    ['马里奥拆屋工 (W) Wrecking Crew [!]', '(W) Wrecking Crew [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(W) Wrecking Crew [!].nes*/],
-                    ['马里奥医生 Dr. Mario (JU)', 'Dr. Mario (JU).nes'/*tpa=http://fc.liflag.cn/roms/bfirsh/Dr. Mario (JU).nes*/],
-                ],
-                "双截龙": [
-                    ['双截龙1 Double Dragon1', 'Double Dragon1.nes'/*tpa=http://fc.liflag.cn/roms/Double Dragon/Double Dragon1.nes*/],
-                    ['双截龙2 Double Dragon2', 'Double Dragon2.nes'/*tpa=http://fc.liflag.cn/roms/Double Dragon/Double Dragon2.nes*/],
-                    ['双截龙3 Double Dragon3', 'Double Dragon3.nes'/*tpa=http://fc.liflag.cn/roms/Double Dragon/Double Dragon3.nes*/],
-                    ['双截龙4 Double Dragon4', 'Double Dragon4.nes'/*tpa=http://fc.liflag.cn/roms/Double Dragon/Double Dragon4.nes*/],
-                ],
-                "淘金者": [
-                    ['淘金者(汉化)', 'TaoJinZhe.nes'/*tpa=http://fc.liflag.cn/roms/rom1/TaoJinZhe.nes*/],
-                    ['淘金者(J)', 'Championship Lode Runner (J).nes'/*tpa=http://fc.liflag.cn/roms/rom1/Championship Lode Runner (J).nes*/],
-                ],
-                "俄罗斯方块": [
-                    ['俄罗斯方块LJ65', 'lj65.nes'/*tpa=http://fc.liflag.cn/roms/lj65/lj65.nes*/],
-                    ['俄罗斯方块Tetris(U)', 'Tetris (U) [!].nes'/*tpa=http://fc.liflag.cn/roms/other/Tetris (U) [!].nes*/],
-                    ['俄罗斯方块Tetris 2(U)', 'Tetris 2 (U) [!].nes'/*tpa=http://fc.liflag.cn/roms/other/Tetris 2 (U) [!].nes*/],
-                ],
-                "赛车": [
-                    ['F1赛车 (J) F-1 Race [!]', '(J) F-1 Race [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) F-1 Race [!].nes*/],
-                    ['摩托车大赛 (JU) (PRG0) Mach Rider [!]', '(JU) (PRG0) Mach Rider [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(JU) (PRG0) Mach Rider [!].nes*/],
-                    ['越野机车 (JU) Excitebike [!]', '(JU) Excitebike [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(JU) Excitebike [!].nes*/],
-                    ['火箭车 (J) Road Fighter [!]', '(J) Road Fighter [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Road Fighter [!].nes*/],
-                ],
-                "1981": [
-                    ['五子棋 (5) 日版', '5.nes'/*tpa=http://fc.liflag.cn/roms/1981/5.nes*/],
-                ],
-                "其它": [
-                    ['泡泡 Bubble Bobble (U)', 'Bubble Bobble (U).nes'/*tpa=http://fc.liflag.cn/roms/bfirsh/Bubble Bobble (U).nes*/],
-                    ['Concentration Room', 'croom.nes'/*tpa=http://fc.liflag.cn/roms/croom/croom.nes*/],
-                    ['网球Tennis(JU)', 'Tennis (JU) [!].nes'/*tpa=http://fc.liflag.cn/roms/other/Tennis (JU) [!].nes*/],
-                    ['高尔夫 Golf (JU)', 'Golf (JU).nes'/*tpa=http://fc.liflag.cn/roms/bfirsh/Golf (JU).nes*/],
-                    ['Zelda II - The Adventure of Link(U)', 'Zelda II - The Adventure of Link (U).nes'/*tpa=http://fc.liflag.cn/roms/other/Zelda II - The Adventure of Link (U).nes*/],
-                    ['地底探险1 (J) Spelunker [!]', '(J) Spelunker [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Spelunker [!].nes*/],
-                    ['快乐猫 (J) Mappy [!]', '(J) Mappy [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Mappy [!].nes*/],
-                    ['成龙踢馆1 (J) Spartan X [!]', '(J) Spartan X [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Spartan X [!].nes*/],
-                    ['敲冰块 (J) Ice Climber', '(J) Ice Climber.nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Ice Climber.nes*/],
-                    ['炸弹人1 (J) Bomberman [!]', '(J) Bomberman [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Bomberman [!].nes*/],
-                    ['猪小弟 (J) Pooyan', '(J) Pooyan.nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Pooyan.nes*/],
-                    ['马戏团 (J) Circus Charlie [!]', '(J) Circus Charlie [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Circus Charlie [!].nes*/],
-                ],
-                // "不可用": [
-                //     ['Concentration Room', 'croom.nes'/*tpa=http://fc.liflag.cn/roms/croom/croom.nes*/],
-                //     ['LJ65', 'lj65.nes'/*tpa=http://fc.liflag.cn/roms/lj65/lj65.nes*/],
-                //     ['赤色要塞 (KC) Jackal', 'Jackal.nes'/*tpa=http://fc.liflag.cn/roms/other/Jackal.nes*/],
-                //     ['花式撞球 (U) Side Pocket', 'Side Pocket.nes'/*tpa=http://fc.liflag.cn/roms/rom2/Side Pocket.nes*/],
-                //     ['彩虹岛 (U) Rainbow Islands', 'Rainbow Islands.nes'/*tpa=http://fc.liflag.cn/roms/rom2/Rainbow Islands.nes*/],
-                //     ['快打旋风 (U) Mighty Final Fight', 'Mighty Final Fight.nes'/*tpa=http://fc.liflag.cn/roms/rom2/Mighty Final Fight.nes*/],
+                "手残党专区": [
+                    ['超级玛丽(无敌版)', 'roms/chaojimaliwd.nes'],
+                    ['三目童子(无敌版)', 'roms/3wdk.nes'],
+                    ['赤影战士(无敌版)', 'roms/chiyingzhanshiwd.nes'],
+					['超级玛丽水管工(无限命)', 'roms/chaojimalishuiguangong.nes'],
+					['炸弹人(无敌版)', 'roms/zhadan.nes'],
+					['洛克人(无敌版)', 'roms/lkr.nes'],
+					['鸟人战队(无敌版)', 'roms/niaorenzhandui.nes'],
+					['魂斗罗(30命)', 'roms/hun.nes'],
+					['魂斗罗2(无敌版)', 'roms/hun2.nes'],
+					['冒险岛(无敌版)', 'roms/maoxiandaowd.nes'],
+					['冒险岛2(无限命)', 'roms/maoxiandao2.nes'],
+					['冒险岛3(无限命)', 'roms/maoxiandao3.nes'],
+					['冒险岛4(无敌版)', 'roms/maoxiandao4.nes'],
+					],
+				"经典专区": [
+                    ['超级玛丽', 'roms/Super Mario Bros. (JU) (PRG0) [!].nes'],
+					['超级玛丽3', 'roms/Super Mario Bros. 3 (U) (PRG1) [!].nes'],
+					['超级玛丽拆屋工', 'roms/(W) Wrecking Crew [!].nes'],
+					['超级玛丽医生', 'roms/Dr. Mario (JU).nes'],	
+					['======',''],
+                    ['冒险岛', 'roms/maoxiandao.nes'],
+					['冒险岛2', 'roms/maoxiandao2.nes'],
+					['冒险岛3', 'roms/maoxiandao3.nes'],
+					['冒险岛4', 'roms/maoxiandao4.nes'],
+					['======',''],
+					['双截龙1', 'roms/shuang.nes'],
+					['双截龙2', 'roms/Double Dragon2.nes'],
+					['双截龙3', 'roms/shuang3.nes'],
+					['双截龙4', 'roms2/Double Dragon/Double Dragon4.nes'],
+					['======',''],
+					['魂斗罗1(U)30', 'roms2/Contra/Contra1(U)30.nes'],
+                    ['魂斗罗1(U)30F', 'roms2/Contra/Contra1(U)30F.nes'],
+                    ['魂斗罗1(U)30L', 'roms2/Contra/Contra1(U)30L.nes'],
+                    ['魂斗罗1(U)30M', 'roms2/Contra/Contra1(U)30M.nes'],
+                    ['魂斗罗1(U)30S', 'roms2/Contra/Contra1(U)30S.nes'],
+                    ['魂斗罗1(U)F', 'roms2/Contra/Contra1(U)F.nes'],
+                    ['魂斗罗1(U)L', 'roms2/Contra/Contra1(U)L.nes'],
+                    ['魂斗罗1(U)M', 'roms2/Contra/Contra1(U)M.nes'],
+                    ['魂斗罗1(U)S', 'roms2/Contra/Contra1(U)S.nes'],
+                    ['======',''],
+                    ['坦克 (Ch) Missile Tank', 'roms2/rom1/(Ch) Missile Tank.nes'],
+                    ['坦克 (Ch) Tank 1990', 'roms2/rom1/(Ch) Tank 1990.nes'],
+                    ['坦克 (J) Battle City', 'roms2/rom1/(J) Battle City.nes'],
+                    ['坦克大冒险','roms2/new/BLASTERM.NES'],
+                    ['坦克大战', 'roms/tanke.nes'],
+                    ['大坦克', 'roms2/new/datanke.nes'],
+                    ['战斗坦克', 'roms2/new/Battle Tank (U).nes'],
+                    ['test','roms2/new/jackal.nes'],
+                    ['======',''],
+                    ['俄罗斯方块LJ65', 'roms2/lj65/lj65.nes'],
+                    ['俄罗斯方块Tetris(U)', 'roms2/other/Tetris (U) [!].nes'],
+                    ['俄罗斯方块Tetris 2(U)', 'roms2/other/Tetris 2 (U) [!].nes'],
+                    ['俄罗斯方块(Tengen)', 'roms2/rom1/(Tengen) Tetris [!].nes'],
+                    ['======',''],
+					['大金刚', 'roms/dajingang.nes'],
+					['大金刚2', 'roms/dajingang2.nes'],
+					['大金刚3', 'roms/dajingang3.nes'],	
+					['======',''],
+					['脱狱', 'roms/tuoyu-cn.nes'],
+					['脱狱2', 'roms/Cross Fire (J).nes'],
+					['======',''],
+					['功夫', 'roms/(J) (V1.2) Yie Ar Kung-Fu [!].nes'],
+					['成龙踢馆', 'roms2/other/(J) Spartan X [!].nes'],
+					['激龟快打', 'roms/sg4.nes'],
+					['======',''],
+					['中国象棋', 'roms/Zhong Guo Xiang Qi.nes'],
+					['五子棋 (5) 日版', 'roms2/1981/5.nes'],
+					['======',''],										
+					['泡泡龙', 'roms/ppl2.nes'],
+					['泡泡', 'roms2/other/Bubble Bobble (U).nes'],
+					['======',''],
+                    ['公路赛车', 'roms/gonglusaiche.nes'],
+                    ['F1赛车', 'roms/(J) F-1 Race [!].nes'],
+                    ['摩托车大赛', 'roms2/rom1/(JU) (PRG0) Mach Rider [!].nes'],
+                    ['越野摩托', 'roms/Motor.nes'],
+                    ['越野机车', 'roms2/rom1/(JU) Excitebike [!].nes'],
+                    ['火箭车', 'roms2/rom1/(J) Road Fighter [!].nes'],
+                    ['======',''],
+                    ['炸弹人', '/roms2/rom1/(J) Bomberman [!].nes'],
+                    ['炸弹王', 'roms/zhadanwang.nes'],
+                    ['======',''],
+                    ['淘金者', 'roms/Championship Lode Runner (J).nes'],
+                    ['淘金者(汉化)', 'roms2/rom1/TaoJinZhe.nes'],
+                    ['======',''],
+					['米老鼠', 'roms/milaoshu.nes'],
+					['唐老鸭', 'roms/tanglaoya.nes'],
+					['猫捉老鼠', 'roms/mzls.nes'],	
+					['======',''],
+                    ['高尔夫 Golf (JU)', 'roms2/other/Golf (JU).nes'],
+                    ['网球Tennis(JU)', 'roms2/other/Tennis (JU) [!].nes'],
+                    ['撞球咖啡馆e', 'roms2/rom2/Shufflepuck Cafe.nes'],
+                    ['======',''], 
+                    ['快乐猫', 'roms2/other/(J) Mappy [!].nes'],
+                    ['纽约大拳猫', 'roms2/rom2/RockinCats.nes'],
+                    ['======',''],
+                    ['敲冰块', 'roms2/other/(J) Ice Climber.nes'],
+                    ['打砖块1', 'roms2/rom1/(J) Arkanoid [!].nes'],
+                    ['======',''],
+                    ['Concentration Room', 'roms2/other/croom.nes'],
+                    ['Zelda II', 'roms2/other/Zelda II - The Adventure of Link (U).nes'],
+                    ['地底探险1', 'roms2/other/(J) Spelunker [!].nes'],
+                    ['烈火', 'roms/l2.nes'],
+					['斧王', 'roms/fuwang.nes'],
+					['特派指令(中文版)', 'roms/tejiuzhiling-cn.nes'],
+					['中东战争(中文版)', 'roms/zhongdongzhanzheng-cn.nes'],
+					['天使之翼', 'roms/tianshizhiyi.nes'],
+					['三目童子', 'roms/3.nes'],
+					['赤影战士', 'roms/Kage.nes'],
+					['沙罗曼蛇', 'roms/Life Force [!].nes'],
+					['雪人兄弟', 'roms/xueren.nes'],
+					['人间兵器', 'roms/rjbq.nes'],
+					['忍者神龟', 'roms/sg1.nes'],
+					['兔宝宝', 'roms/tubaobao.nes'],
+					['蝙蝠侠', 'roms/bianfuxia.nes'],
+                    ['影子传说', 'roms/Kage.nes'],
+                    ['西游记', 'roms/xyj1.nes'],
+					['小蜜蜂', 'roms/xiaomifeng.nes'],
+					['恶魔城', 'roms/emc.nes'],                                      
+                    ['马戏团', 'roms/ma.nes'],
+                    ['上尉密令/美队', 'roms/meidui.nes'],
+                    ['侏罗纪世界', 'roms/zhuluojishijie.nes'],
+                    ['AV麻雀俱乐部', 'roms2/rom1/(Hacker) AV Mahjongg.nes'],
+                    ['猪小弟', 'roms2/other/(J) Pooyan.nes'],
+                    ['兵蜂1', 'roms2/rom1/(J) TwinBee [!].nes'],
+                    ['SD高达2', 'roms2/new/SD Gundam - Gachapon Senshi 2 - Capsule Senki (J).nes'],
+                    ['阿拉丁1', 'roms2/new/Aladdin1.nes'],
+                    ['弹珠台2','roms2/new/Rollerball (J).nes'],
+                    ['四川麻将-制服篇','roms2/new/Seifuku Hen - Shisen Mahjong (UNL).nes'],
+                    ['吃豆精灵', 'roms2/other/Pac-Man.nes'],
+                    ['The Battle of Midway', 'roms2/rom2/1943.nes'],
+                    ['===全中文===',''],
+                    ['三国英杰', 'roms2/new/sgyj.nes'],
+                    ['4人麻将', 'rom3/4rmj.nes'],
+                    ['东方传说', 'rom3/dfcs.nes'],
+                    ['口袋妖怪', 'rom3/kdyg.nes'],
+                    ['古墓丽影', 'rom3/gmly.nes'],
+                    ['合金风暴', 'rom3/hjfb.nes'],
+                    ['圣灵传说', 'rom3/slcs.nes'],
+                    ['坦克风云', 'rom3/tkfy.nes'],
+                    ['外星战将', 'rom3/wxzj.nes'],
+                    ['屠龙记4', 'rom3/tlj4.nes'],
+                    ['幽灵列车', 'rom3/yllc.nes'],
+                    ['异型之太空探险者', 'rom3/yxztktxz.nes'],
+                    ['总决战', 'rom3/zjz.nes'],
+                    ['救火英雄', 'rom3/jhyx.nes'],
+                    ['最游记之唐三藏', 'rom3/zyjztsz.nes'],
+                    ['杀戮战场', 'rom3/slzc.nes'],
+                    ['梦企鹅物语', 'rom3/mqewy.nes'],
+                    ['梦幻', 'rom3/mh.nes'],
+                    ['欧陆大战', 'rom3/oldz.nes'],
+                    ['武士魂', 'rom3/wsh.nes'],
+                    ['武林外传', 'rom3/wlwz.nes'],
+                    ['汤姆历险记', 'rom3/tmlxj.nes'],
+                    ['皮卡丘', 'rom3/bkq.nes'],
+                    ['碰碰车', 'rom3/ppc.nes'],
+                    ['神探科蓝', 'rom3/stkl.nes'],
+                    ['红楼梦', 'rom3/hlm.nes'],
+                    ['绿野仙踪', 'rom3/lyxz.nes'],
+                    ['铁血战士', 'rom3/txzs.nes'],
+                    ['银河时代', 'rom3/yhsd.nes'],
+                    ['魔法总动员', 'rom3/mfzdy.nes'],
+                    ['魔道士阴谋', 'rom3/mdsym.nes'],
+                    ['黑客', 'rom3/hk.nes'],
 
-                //     ['七宝奇谋1 (J) Goonies, The [!]', '(J) Goonies, The [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Goonies, The [!].nes*/],
-                //     ['俄罗斯方块 (Tengen) Tetris [!]', '(Tengen) Tetris [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(Tengen) Tetris [!].nes*/],
-                //     ['兵蜂1 (J) TwinBee [!]', '(J) TwinBee [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) TwinBee [!].nes*/],
-                //     ['冒险岛1 (J) Takahashi Meijin no Bouken Shima [!]', '(J) Takahashi Meijin no Bouken Shima [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Takahashi Meijin no Bouken Shima [!].nes*/],
-                //     ['南极大冒险 (J) Antarctic Adventure [!]', '(J) Antarctic Adventure [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Antarctic Adventure [!].nes*/],
-                //     ['叮当1 (J) Dig Dug [!]', '(J) Dig Dug [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Dig Dug [!].nes*/],
-
-                //     ['影之传说 (J) Kage no Densetsu [!]', '(J) Kage no Densetsu [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Kage no Densetsu [!].nes*/],
-                //     ['打砖块1 (J) Arkanoid [!]', '(J) Arkanoid [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Arkanoid [!].nes*/],
-                //     ],
-                "忍者龙剑传": [
-                    ['忍者龙剑传1 (PC10) Ninja Gaiden', 'Ninja_Gaiden1.nes'/*tpa=http://fc.liflag.cn/roms/Ninja_Gaiden/Ninja_Gaiden1.nes*/],
-                    ['忍者龙剑传2 (PC10) Ninja Gaiden II - The Dark Sword of Chaos', 'Ninja_Gaiden2.nes'/*tpa=http://fc.liflag.cn/roms/Ninja_Gaiden/Ninja_Gaiden2.nes*/],
-                    ['忍者龙剑传3 (PC10) Ninja Gaiden III - The Ancient Ship of Doom', 'Ninja_Gaiden3.nes'/*tpa=http://fc.liflag.cn/roms/Ninja_Gaiden/Ninja_Gaiden3.nes*/],
-                    ['小蜜蜂 (J) Galaxian [!]', '(J) Galaxian [!].nes'/*tpa=http://fc.liflag.cn/roms/rom1/(J) Galaxian [!].nes*/],
-                    ['AV麻雀俱乐部 (Hacker) AV Mahjongg', '(Hacker) AV Mahjongg.nes'/*tpa=http://fc.liflag.cn/roms/rom1/(Hacker) AV Mahjongg.nes*/],
+                    ['几千上万游戏待更新...',''],
                 ],
+                
+                
+                "更多游戏更新中": [],
+                
+            
+        
+                    
+                
+               
+                  
             })
         });
     });
